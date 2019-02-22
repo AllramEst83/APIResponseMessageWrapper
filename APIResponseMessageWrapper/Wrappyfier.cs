@@ -19,6 +19,57 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
+        public static AccountsSigupResponseMessgae WrapSigupResponse(string id, string email, int statusCode)
+        {
+
+            AccountsSigupResponseMessgae responseMessage =
+                new AccountsSigupResponseMessgae()
+                {
+                    Id = id,
+                    Email = email,
+                    StatusCode = statusCode,
+                    Description = "Accont successfully created",
+                    Error = "no_error",
+                    Code = "account_created"
+                    
+                };
+
+            return responseMessage;
+        }
+
+        public static AddRoleResponseMessage WrapAddRoleResponse(string role)
+        {
+
+            AddRoleResponseMessage responseMessage =
+                new AddRoleResponseMessage()
+                {
+                   Role = role,
+                   Code = "role_created",
+                   StatusCode = 200,
+                   Description = "Role has successfully been created.",
+                   Error = "no_error"
+                };
+
+            return responseMessage;
+        }
+
+        public static AddUserToRoleResponseMessage WrapAddRoleToUserResponse(string email,string role)
+        {
+
+            AddUserToRoleResponseMessage responseMessage =
+                new AddUserToRoleResponseMessage()
+                {
+                    Email = email,
+                    Role = role,
+                    Code = "role_added_to_user",
+                    StatusCode = 200,
+                    Description = "Role has successfully been added to the user.",
+                    Error = "no_error"
+                };
+
+            return responseMessage;
+        }
+
         public static APIReturnListViewModel WrapAPIList(int statusCode, string message, List<UsersViewModel> listOfUsers)
         {
             APIReturnListViewModel listViewModel = new APIReturnListViewModel()
