@@ -19,6 +19,29 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
+        public static RemoveUserfromRoleResponseMessage WrapRemoveUserFromRole(
+            string userId, 
+            string email,
+            string role,
+            int statusCode)
+        {
+
+            RemoveUserfromRoleResponseMessage responseMessage =
+                new RemoveUserfromRoleResponseMessage()
+                {
+                    Role = role,
+                    Email = email,
+                    UserId = userId,
+                    Code = "role_has_successfully_been_removed",
+                    Description = "Role hase successfully been removed from user",
+                    Error = "Role has successfully been removed.",
+                    StatusCode = statusCode
+
+                };
+
+            return responseMessage;
+        }
+
         public static AccountsSigupResponseMessgae WrapSigupResponse(string id, string email, int statusCode)
         {
 
@@ -53,11 +76,11 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
-        public static AddUserToRoleResponseMessage WrapAddRoleToUserResponse(string email,string role)
+        public static GatewayAddRoleResponse WrapAddRoleToUserResponse(string email,string role)
         {
 
-            AddUserToRoleResponseMessage responseMessage =
-                new AddUserToRoleResponseMessage()
+            GatewayAddRoleResponse responseMessage =
+                new GatewayAddRoleResponse()
                 {
                     Email = email,
                     Role = role,

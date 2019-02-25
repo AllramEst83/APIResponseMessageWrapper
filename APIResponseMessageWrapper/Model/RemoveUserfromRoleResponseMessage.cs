@@ -4,10 +4,11 @@ using System.Text;
 
 namespace APIResponseMessageWrapper.Model
 {
-   public class AddUserToRoleResponseMessage
+    public class RemoveUserfromRoleResponseMessage
     {
         public string Email { get; set; }
         public string Role { get; set; }
+        public string UserId { get; set; }
         public int StatusCode { get; set; }
         public string Error { get; set; }
         public string Description { get; set; }
