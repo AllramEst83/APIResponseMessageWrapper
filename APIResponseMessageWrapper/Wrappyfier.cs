@@ -42,6 +42,29 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
+        public static GetUserRolesResponseMessage WrapGetUserRoles(
+        string userId,
+        string email,
+        List<string> roles,
+        int statusCode)
+        {
+
+            GetUserRolesResponseMessage responseMessage =
+                new GetUserRolesResponseMessage()
+                {
+                    Roles = roles,
+                    Email = email,
+                    UserId = userId,
+                    Code = "all_user_roles",
+                    Description = "All roles for the specified user",
+                    Error = "no_error",
+                    StatusCode = statusCode
+
+                };
+
+            return responseMessage;
+        }
+
         public static AccountsSigupResponseMessgae WrapSigupResponse(string id, string email, int statusCode)
         {
 
