@@ -134,6 +134,23 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
+        public static DeleteUserResponseMessage WrapDeleteUserResponse(string id, string email)
+        {
+
+            DeleteUserResponseMessage responseMessage =
+                new DeleteUserResponseMessage()
+                {
+                    Email = email,
+                    Id = id,
+                    Code = "user_deleted",
+                    StatusCode = 200,
+                    Description = "User has successfully been deleted and all realted roles has been unlinked.",
+                    Error = "no_error"
+                };
+
+            return responseMessage;
+        }
+
         public static APIReturnListViewModel WrapAPIList(int statusCode, string message, List<UsersViewModel> listOfUsers)
         {
             APIReturnListViewModel listViewModel = new APIReturnListViewModel()
