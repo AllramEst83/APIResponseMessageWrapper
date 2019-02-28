@@ -83,6 +83,24 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
+        public static DeleteRoleResponseMessage WrapDeleteRole(string roleId, string roleName, int statusCode)
+        {
+
+            DeleteRoleResponseMessage responseMessage =
+                new DeleteRoleResponseMessage()
+                {
+                    RoleId = roleId,
+                    RoleName = roleName,
+                    StatusCode = statusCode,
+                    Description = "Role successfully deleted",
+                    Error = "no_error",
+                    Code = "role_successfully_deleted"
+
+                };
+
+            return responseMessage;
+        }
+
         public static AddRoleResponseMessage WrapAddRoleResponse(string role)
         {
 
