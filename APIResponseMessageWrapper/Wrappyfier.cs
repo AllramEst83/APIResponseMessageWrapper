@@ -20,7 +20,7 @@ namespace APIResponseMessageWrapper
         }
 
         public static RemoveUserfromRoleResponseMessage WrapRemoveUserFromRole(
-            string userId, 
+            string userId,
             string email,
             string role,
             int statusCode)
@@ -77,7 +77,7 @@ namespace APIResponseMessageWrapper
                     Description = "Accont successfully created",
                     Error = "no_error",
                     Code = "account_created"
-                    
+
                 };
 
             return responseMessage;
@@ -107,17 +107,17 @@ namespace APIResponseMessageWrapper
             AddRoleResponseMessage responseMessage =
                 new AddRoleResponseMessage()
                 {
-                   Role = role,
-                   Code = "role_created",
-                   StatusCode = 200,
-                   Description = "Role has successfully been created.",
-                   Error = "no_error"
+                    Role = role,
+                    Code = "role_created",
+                    StatusCode = 200,
+                    Description = "Role has successfully been created.",
+                    Error = "no_error"
                 };
 
             return responseMessage;
         }
 
-        public static GatewayAddRoleResponse WrapAddRoleToUserResponse(string email,string role)
+        public static GatewayAddRoleResponse WrapAddRoleToUserResponse(string email, string role)
         {
 
             GatewayAddRoleResponse responseMessage =
@@ -146,6 +146,23 @@ namespace APIResponseMessageWrapper
                     StatusCode = 200,
                     Description = "User has successfully been deleted and all realted roles has been unlinked.",
                     Error = "no_error"
+                };
+
+            return responseMessage;
+        }
+
+        public static GetAllRolesResponseMessage WrapGetAllRolesResponse(List<GetAllRoles> listOfRoles)
+        {
+
+            GetAllRolesResponseMessage responseMessage =
+                new GetAllRolesResponseMessage()
+                {
+                    ListOfAllRoles = listOfRoles,
+                    Code = "list_of_all_roles",
+                    StatusCode = 200,
+                    Description = "List of all existing roles.",
+                    Error = "no_error",
+                    
                 };
 
             return responseMessage;
