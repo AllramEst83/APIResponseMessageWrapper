@@ -1,4 +1,6 @@
 ﻿using APIResponseMessageWrapper.Model;
+using ResponseModels.Models;
+using ResponseModels.ViewModels;
 using System;
 using System.Collections.Generic;
 
@@ -151,11 +153,11 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
-        public static GetAllRolesResponseMessage WrapGetAllRolesResponse(List<GetAllRoles> listOfRoles)
+        public static GetAllRolesResponse WrapGetAllRolesResponse(List<GetAllRoles> listOfRoles)
         {
 
-            GetAllRolesResponseMessage responseMessage =
-                new GetAllRolesResponseMessage()
+            GetAllRolesResponse responseMessage =
+                new GetAllRolesResponse()
                 {
                     ListOfAllRoles = listOfRoles,
                     Code = "list_of_all_roles",
