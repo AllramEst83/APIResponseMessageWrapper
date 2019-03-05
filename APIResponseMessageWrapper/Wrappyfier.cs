@@ -1,7 +1,6 @@
 ﻿using APIResponseMessageWrapper.Model;
 using ResponseModels.Models;
 using ResponseModels.ViewModels;
-using System;
 using System.Collections.Generic;
 
 namespace APIResponseMessageWrapper
@@ -21,15 +20,15 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
-        public static RemoveUserfromRoleResponseMessage WrapRemoveUserFromRole(
+        public static AddUserToRoleResponse WrapRemoveUserFromRole(
             string userId,
             string email,
             string role,
             int statusCode)
         {
 
-            RemoveUserfromRoleResponseMessage responseMessage =
-                new RemoveUserfromRoleResponseMessage()
+            AddUserToRoleResponse responseMessage =
+                new AddUserToRoleResponse()
                 {
                     Role = role,
                     Email = email,
@@ -44,15 +43,15 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
-        public static GetUserRolesResponseMessage WrapGetUserRoles(
+        public static GetUserRolesResponse WrapGetUserRoles(
         string userId,
         string email,
         List<string> roles,
         int statusCode)
         {
 
-            GetUserRolesResponseMessage responseMessage =
-                new GetUserRolesResponseMessage()
+            GetUserRolesResponse responseMessage =
+                new GetUserRolesResponse()
                 {
                     Roles = roles,
                     Email = email,
@@ -85,11 +84,10 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
-        public static DeleteRoleResponseMessage WrapDeleteRole(string roleId, string roleName, int statusCode)
+        public static DeleteRoleResponse WrapDeleteRole(string roleId, string roleName, int statusCode)
         {
-
-            DeleteRoleResponseMessage responseMessage =
-                new DeleteRoleResponseMessage()
+            DeleteRoleResponse responseMessage =
+                new DeleteRoleResponse()
                 {
                     RoleId = roleId,
                     RoleName = roleName,
@@ -103,11 +101,11 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
-        public static AddRoleResponseMessage WrapAddRoleResponse(string role)
+        public static AddRoleResponse WrapAddRoleResponse(string role)
         {
 
-            AddRoleResponseMessage responseMessage =
-                new AddRoleResponseMessage()
+            AddRoleResponse responseMessage =
+                new AddRoleResponse()
                 {
                     Role = role,
                     Code = "role_created",
@@ -119,11 +117,11 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
-        public static GatewayAddRoleResponse WrapAddRoleToUserResponse(string email, string role)
+        public static AddUserToRoleResponse WrapAddRoleToUserResponse(string email, string role)
         {
 
-            GatewayAddRoleResponse responseMessage =
-                new GatewayAddRoleResponse()
+            AddUserToRoleResponse responseMessage =
+                new AddUserToRoleResponse()
                 {
                     Email = email,
                     Role = role,
@@ -136,11 +134,11 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
-        public static DeleteUserResponseMessage WrapDeleteUserResponse(string id, string email)
+        public static DeleteUserResponse WrapDeleteUserResponse(string id, string email)
         {
 
-            DeleteUserResponseMessage responseMessage =
-                new DeleteUserResponseMessage()
+            DeleteUserResponse responseMessage =
+                new DeleteUserResponse()
                 {
                     Email = email,
                     Id = id,
