@@ -66,11 +66,11 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
-        public static AccountsSigupResponseMessgae WrapSigupResponse(string id, string email, int statusCode)
+        public static SignUpResponse WrapSigupResponse(string id, string email, int statusCode)
         {
 
-            AccountsSigupResponseMessgae responseMessage =
-                new AccountsSigupResponseMessgae()
+            SignUpResponse responseMessage =
+                new SignUpResponse()
                 {
                     Id = id,
                     Email = email,
