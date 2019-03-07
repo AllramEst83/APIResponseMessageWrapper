@@ -101,13 +101,14 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
-        public static AddRoleResponse WrapAddRoleResponse(string role)
+        public static AddRoleResponse WrapAddRoleResponse(string roleId, string roleName)
         {
 
             AddRoleResponse responseMessage =
                 new AddRoleResponse()
                 {
-                    Role = role,
+                    Id = roleId,
+                    Role = roleName,
                     Code = "role_created",
                     StatusCode = 200,
                     Description = "Role has successfully been created.",
@@ -168,7 +169,7 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
-        public static APIReturnListViewModel WrapAPIList(int statusCode, string message, List<UsersViewModel> listOfUsers)
+        public static APIReturnListViewModel WrapAPIList(int statusCode, string message, List<UsersResponse> listOfUsers)
         {
             APIReturnListViewModel listViewModel = new APIReturnListViewModel()
             {
