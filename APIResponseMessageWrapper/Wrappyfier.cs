@@ -169,14 +169,18 @@ namespace APIResponseMessageWrapper
             return responseMessage;
         }
 
-        public static APIReturnListViewModel WrapAPIList(int statusCode, string message, List<UsersResponse> listOfUsers)
+        public static GetAllUsersResponse WrapAPIList(int statusCode, string message, List<UsersResponse> listOfUsers)
         {
-            APIReturnListViewModel listViewModel = new APIReturnListViewModel()
+            GetAllUsersResponse listViewModel = 
+                new GetAllUsersResponse()
             {
-                StatusCode = statusCode,
-                Message = message,
-                ListOfUsers = listOfUsers
-            };
+                   
+                    StatusCode = 200,
+                    Error = "No error",
+                    Description = "List of all existning users.",
+                    Code = "no_error",
+                    ListOfAllUsers = listOfUsers
+                };
 
             return listViewModel;
         }
