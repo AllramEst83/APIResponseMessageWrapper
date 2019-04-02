@@ -1,6 +1,8 @@
 ﻿using APIResponseMessageWrapper.Model;
+using ResponseModels.DatabaseModels;
 using ResponseModels.Models;
 using ResponseModels.ViewModels;
+using ResponseModels.ViewModels.Aerende;
 using System.Collections.Generic;
 
 namespace APIResponseMessageWrapper
@@ -183,6 +185,36 @@ namespace APIResponseMessageWrapper
                 };
 
             return listViewModel;
+        }
+
+        public static GetAllPatientJournalsResponse WrapPatientJournalsResponse(AllPatientJournals patientJournals)
+        {
+            GetAllPatientJournalsResponse listViewModel =
+                new GetAllPatientJournalsResponse()
+                {
+                    PatientJournals = patientJournals.PatentJournals,
+                    StatusCode = 200,
+                    Error = "No error",
+                    Description = "All existing patient journals",
+                    Code = "no_error"
+                };
+
+            return listViewModel;
+        }
+
+        public static GetPatientJournalResponse WrapGetPatientJournalResponse(PatientJournal patientJournal)
+        {
+            GetPatientJournalResponse patientJournalResponse =
+             new GetPatientJournalResponse()
+             {
+                 PatientJournal = patientJournal,
+                 StatusCode = 200,
+                 Error = "No error",
+                 Description = "Returned patient journal matching the id.",
+                 Code = "no_error"
+             };
+
+            return patientJournalResponse;
         }
 
     }
